@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/circlebackground_blue.xml" value="0.18981481481481483" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/circlebackground_pink.xml" value="0.18981481481481483" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/circlebackground_purple.xml" value="0.18981481481481483" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/circulebackground_green.xml" value="0.18981481481481483" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/left_chat_design.xml" value="0.2359375" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/drawable/right_chat_design.xml" value="0.2359375" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_ambulance_actvity.xml" value="0.24010416666666667" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_coruna_doctor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_doctor_chat_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_doctor_list.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_heart_doctor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_helth.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_medichine.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_message_with_dactivity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_new_sign.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_prescription.xml" value="0.19202898550724637" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_serila_introduction.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_signin.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_start.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/activity_start1.xml" value="0.22447916666666667" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/chat_left.xml" value="0.21979166666666666" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/chat_right.xml" value="0.21979166666666666" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/doctorlist_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/expendablechild.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/expendablehader.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/fragment_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/fragment_d_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/helth_simple_design.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/navprofile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/simple_layout_coruna_doctor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/simple_layout_heart_doctor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find Doctor/app/src/main/res/menu/search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_coruna_doctor.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_doctor_chat_list.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_doctor_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_emergency_doctor.xml" value="0.264" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_heart_doctor.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_helth.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_medichine.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_message_with_dactivity.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_new_sign.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_prescription.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/bar_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/expendablechild.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/expendablehader.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/fragment_all_doctor_.xml" value="0.23854166666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

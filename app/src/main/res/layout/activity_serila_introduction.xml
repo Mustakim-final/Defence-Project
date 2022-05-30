@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:layout_marginTop="100dp"
+    tools:context=".SerilaIntroductionActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameSerial_ID"
+        android:hint="Name...">
+
+    </EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address: "
+        android:textStyle="bold"
+        android:textSize="20sp">
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="136dp">
+
+        <EditText
+            android:id="@+id/districtSerial_ID"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="District..."
+            android:padding="10dp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/subdistrictSerial_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/districtSerial_ID"
+            android:hint="Sub District..."
+            android:padding="10dp">
+
+        </EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/localSerial_ID"
+            android:layout_alignBottom="@+id/districtSerial_ID"
+            android:layout_marginBottom="-60dp"
+            android:hint="Local Address "
+            android:padding="10dp">
+
+        </EditText>
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/illnessSerial_ID"
+        android:hint="Description of illness...">
+
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/phoneSerial_ID"
+        android:hint="Phone Number..">
+
+    </EditText>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:layout_marginTop="20dp"
+        android:id="@+id/submitSerial_ID">
+
+    </Button>
+
+
+
+
+
+
+</LinearLayout>

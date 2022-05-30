@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">find doctor</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="header_string">
+        <item>Flexi®</item>
+        <item>Tylace™</item>
+        <item>Virux®</item>
+        <item>Virux® HC</item>
+        <item>Benzapen ®</item>
+        <item>Flexilax®</item>
+        <item>Geston™</item>
+        <item>Ketoral®</item>
+        <item>Torax®</item>
+    </string-array>
+
+    <string-array name="child_string">
+        <item>Osteoarthritis, rheumatoid arthritis and ankylosing spondylitis</item>
+        <item>As an adjunctive treatment for patients with abnormal,
+        viscid or inspissated mucus secretion associated with conditions such as- Acute and chronic bronchopulmonary disorders
+            (Pneumonia, Bronchitis, Laryngitis, Sinusitis, Tracheitis, Influenza, Emphysema, Tracheobronchitis, Chronic asthmatic bronchitis, Tuberculosis etc.), Atelectasis , Pulmonary complication of cystic fibrosis, Pulmonary complication of thoracic and cardiovascular surgery.
+        </item>
+        <item>Systemic Antifungal, Antiviral and Antiprotozoal Agents</item>
+        <item>Skin Preparations</item>
+        <item>Benzapen® injection is indicated in adults, adolescents, children and neonates for the treatment and prophylaxis of the following infections: For the treatment of:
+- erysipelas
+- syphilis: early syphilis (primary and secondary)
+- latent syphilis (except for neurosyphilis and presence of pathological CSF findings)
+- yaws
+- pinta
+For the prophylaxis of:
+- rheumatic fever (chorea, rheumatic carditis)
+- poststreptococcal glomerulonephritis
+- erysipelas</item>
+
+        <item>Flexilax® is indicated for the treatment of muscle spasm, muscle contraction,
+            spasticity resulting from multiple sclerosis,
+            spinal cord injuries and other spinal cord diseases,
+            muscle spasm of cerebral origin especially infantile cerebral palsy,
+            cerebrovascular accidents or neoplastic or degenerative brain disease, tension-type headache.</item>
+
+        <item>Threatened Abortion, Habitual Abortion, Intrauterine Growth Retardation, Threatened premature delivery</item>
+
+        <item>Treatment of superficial and deep mycoses : Infections of the skin, hair and nails by dermatophytes and/or yeasts (dermatomycosis, onychomycosis, perionyxis, pityriasisversicolor, chronic mucocutaneous candidiasis etc.) especially when topical treatment is difficult or not very effective,
+            owing to involvement of large skin surfaces or to lesions affecting deeper dermal layers,
+            nails and hairs ; Yeast infection of the mouth (oral thrush, perleche) and the gastrointestinal tract ; Vaginal candidiasis, especially chronic recurrent cases or cases responding poorly to topcial treatment ; Systemic mycotic infections such as systemic candidiasis, paracoccidioidomycosis,
+            histoplasmosis, coccidioidomycosis etc.</item>
+
+        <item>Short-term management of moderate to severe acute post-operative pain and acute pain of other origins.</item>
+
+
+    </string-array>
+
+    <string-array name="khabarer_name">
+        <item> <br><b>প্রোটিন\n</b></br>	<br>1.ডিম:- প্রতিদিন একটি ডিম মস্তিষ্কের বিকাশ ঘটায়। একটি ডিমে রয়েছে সাত থেকে আট গ্রাম প্রোটিন। \n</br>
+            2.পনির:- পনিরে রয়েছে প্রচুর পরিমানে প্রোটিন। দুগ্ধজাত খাবারের মধ্যে পনির অন্যতম। পনিরে প্রোটিনের পাশাপাশি ক্যালসিয়াম ও ফসফরাস রয়েছে যা হাড় ও দাঁতকে মজবুত রাখে। \n
+        	3.মাছ ও মাংস:- প্রোটিনযুক্ত খাবারের মধ্যে জনপ্রিয় খাবার মাছ ও মাংস। মাছ ও মাংসে রয়েছে ২০ থেকে ৩০ শতাংশ প্রোটিন। যা দেহের মাংসপেশি শক্তিশালী করে।\n
+        •	4.দুধ:- দুধ বা দুগ্ধজাত খাবার দৈনিক প্রোটিনের চাহিদা মেটায়। এক কাপ দুধে রয়েছে প্রায় সাত থেকে আট গ্রাম প্রোটিন।</item>
+
+        <item>
+            <br><b>ফ্যাট\n</b></br> 1.মাখন ও ঘি:- ফ্যাট জাতীয় খাবারের মধ্যে অন্যতম খাদ্য মাখন ও ঘি। মাখনে রয়েছে ওমেগা থ্রি ও ওমেগা সিক্স ফ্যাটি অ্যাসিডও যা চুল, ত্বক ও হাড়ের পাশাপাশি মস্তিস্ক সতেজ রাখে। \n
+            2.বাদাম:- প্রতিদিন খাবারের তালিকায় আমন্ড বাদাম ফ্যাটের পাশাপাশি ভিটামিনও যোগায়। শতকরা ৮০ ভাগ ফ্যাট থাকে বাদামে যা দেহের পক্ষে উপকারি।\n
+        	3.খাসির মাংস:- দুধ, ডিমের পাশাপাশি খাসির মাংসও পুষ্টিগুণে পিছিয়ে নেই। প্রতি একশো গ্রাম খাসির মাংসে ২-৩ গ্রাম চর্বি থাকে।
+
+        </item>
+        <item>
+            <br><b>কার্বোহাইড্রেট\n</b></br> 1.সবুজ সবজি:- আদর্শ খাবারের তালিকা য় সবজি প্রথমেই রাখা উচিত। সুস্থ থাকার চাবিকাঠি হল সবুজ সবজি। আলু, পেঁয়াজ, বিনস, ফুলকপি, বাঁধাকপি প্রভৃতি সবজি কার্বোহাইড্রেট যুক্ত যা শরীরের পক্ষে উপযুক্ত। প্রতি একশো গ্রাম সবজিতে ১২-১৩ গ্রাম কার্বোহাইড্রেট রয়েছে। \n
+        	2.মাশরুম:- মাশরুম কার্বোহাইড্রেট যুক্ত খাবার। মাশরুমে আট থেকে দশ শতাংশ কার্বোহাইড্রেট আছে।\n
+            	3.মিষ্টি:- যদি ডায়াবেটিস না থাকে তাহলে নিঃসন্দেহে খাদ্য তালিকায় মিষ্টি রাখাতে পারেন। মিষ্টিতে ৬৫ গ্রাম কার্বোহাইড্রেট রয়েছে।
+
+        </item>
+
+        <item>
+            <br><b>ভিটামিন</b>\n</br> 1.পালং শাক:- পালং শাকে প্রচুর পরিমাণ ভিটামিন সি ও কে রয়েছে যা মস্তিস্কের কার্যক্ষমতা বৃদ্ধিতে সহয়তা করে। পালং শাক রোগ প্রতিরোধের ক্ষমতা রাখে।\n
+            	2.কমলালেবু:- কমলালেবুতে প্রচুর পরিমাণে ভিটামিন সি রয়েছে। যা ত্বকের জন্য খুব উপকার।\n
+                3.গাজর:- গাজরে ২৮ গ্রাম ভিটামিন কে থাকে। এটি রোগ দূর করার পাশাপাশি নার্ভাস সিস্টেম শক্ত রাখে। প্রতিদিন এক গ্লাস গাজরের রস খেলে রোগ প্রতিরোধের ক্ষমতা বাড়ে।\n
+                4.মিষ্টি আলু:- ভিটামিন ই ফুসফুস ও দেহের টিস্যু গঠনের সাহায্য করে। মিষ্টি আলুতে রয়েছে ভিটামিন ই। তাই আদর্শ খাবারের তালিকা এটি একটি সুষম খাদ্য।
+
+        </item>
+    </string-array>
+
+    <string-array name="coruna_doctor">
+        <item>
+            <br><b>Dr. Shamim Boksha\n</b></br>MBBS, FCPS (Medicine), MD (Gastroenterology)\n
+Gastroenterology, Medicine and Liver Diseases Specialist \n
+National Hospital, Chittagong
+        </item>
+
+        <item><br><b>Prof. Dr. M.N. Huda \n</b></br>MBBS, FCPS (Medicine), FRCP, MD (Rheumatology)\n
+        Rheumatology and Medicine Specialist \n
+        Bangabandhu Sheikh Mujib Medical University Hospital
+
+        </item>
+    </string-array>
+
+    <string name="new_Registration">Are you not registration go Serial page or prescription page!!!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

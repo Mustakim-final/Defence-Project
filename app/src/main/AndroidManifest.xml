@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.finddoctor">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FindDoctor">
+        <activity
+            android:name=".EmergencyDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HeartDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewSignActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Start1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MessageWithDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorChatListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CorunaDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".HelthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AmbulanceActvity"
+            android:exported="false" />
+        <activity
+            android:name=".Medichine"
+            android:exported="false" />
+        <activity
+            android:name=".Prescription"
+            android:exported="false" />
+        <activity
+            android:name=".SerilaIntroductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctorList"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

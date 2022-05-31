@@ -39,6 +39,7 @@
         <entry key="..\:/Android/Find Doctor/app/src/main/res/layout/simple_layout_heart_doctor.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Find Doctor/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Find Doctor/app/src/main/res/menu/search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.2045" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_coruna_doctor.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_doctor_chat_list.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_doctor_list.xml" value="0.25416666666666665" />
@@ -51,11 +52,15 @@
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_new_sign.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_prescription.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_serila_introduction.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_shop.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/bar_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/expendablechild.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/expendablehader.xml" value="0.23854166666666668" />
         <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/layout/fragment_all_doctor_.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/menu/menu.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Find-Doctor-master/app/src/main/res/menu/search.xml" value="0.23854166666666668" />
       </map>
     </option>
   </component>

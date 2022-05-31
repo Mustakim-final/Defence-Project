@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_ID"
     android:background="@color/background_color"
-    tools:openDrawer="start"
+    tools:openDrawer=""
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -427,6 +427,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:src="@drawable/shop"
                                 android:background="@drawable/circlebackground_blue">
 
                             </ImageView>

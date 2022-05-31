@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class SignInActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SignInActivity extends AppCompatActivity {
     private Button button;
     private ProgressBar progressBar;
     Intent intent;
-    int value;
+    int value,value1,value2;
 
     FirebaseAuth firebaseAuth;
     DatabaseReference reference;
@@ -38,8 +39,16 @@ public class SignInActivity extends AppCompatActivity {
         button=findViewById(R.id.signSubmit_ID);
         progressBar=findViewById(R.id.signProgressbar_ID);
 
+
         intent=getIntent();
         value=intent.getIntExtra(StartActivity.serial,0);
+        intent=getIntent();
+        value1=intent.getIntExtra(StartActivity.pres,0);
+
+
+
+
+
 
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -76,20 +85,24 @@ public class SignInActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()){
+
                     if (value==1){
-                        Intent intent=new Intent(SignInActivity.this,SerilaIntroductionActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Intent intent=new Intent(SignInActivity.this,Prescription.class);
+                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         Toast.makeText(SignInActivity.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Intent intent=new Intent(SignInActivity.this,Prescription.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }else if (value1==2){
+                        Intent intent=new Intent(SignInActivity.this,SerilaIntroductionActivity.class);
+                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         Toast.makeText(SignInActivity.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                     }
+
 
                 }
             }
         });
     }
+
+
 }

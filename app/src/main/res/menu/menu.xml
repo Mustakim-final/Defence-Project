@@ -18,6 +18,13 @@
             >
         </item>
 
+        <item android:title="log out"
+            android:id="@+id/signOut_ID"
+            android:icon="@drawable/ic_baseline_power_settings_new_24"
+            >
+
+        </item>
+
     </group>
 
     <item android:title="Connection">

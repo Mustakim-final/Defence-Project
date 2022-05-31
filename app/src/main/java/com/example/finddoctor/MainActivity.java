@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,10 +24,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
 
-    private CardView doctorCard,serialCard,prescriptionCard,medicineCard,ambulance,health,emergencyCard;
+    private CardView doctorCard,serialCard,prescriptionCard,medicineCard,ambulance,health,emergencyCard,shopCard;
 
     final static String serial="serial";
+    final static String pres="pres";
 
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ambulance=findViewById(R.id.ambulanceCard_ID);
         health=findViewById(R.id.helthCard_ID);
         emergencyCard=findViewById(R.id.emergency_doctorCard_ID);
+        shopCard=findViewById(R.id.shopCard_ID);
 
         doctorCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,StartActivity.class);
+                intent.putExtra(pres,2);
                 startActivity(intent);
             }
         });
@@ -99,6 +104,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+
+        shopCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,ShopActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         drawerLayout=findViewById(R.id.drawer_ID);
         NavigationView navigationView=findViewById(R.id.navigation_ID);
         navigationView.setNavigationItemSelectedListener(this);
@@ -121,8 +136,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.chat_ID){
-            Intent intent=new Intent(MainActivity.this,Start1Activity.class);
+            Intent intent=new Intent(MainActivity.this,StartActivity.class);
             startActivity(intent);
+        }else if (item.getItemId()== R.id.signOut_ID){
+            mAuth=FirebaseAuth.getInstance();
+            mAuth.signOut();
+            finish();
         }
         return false;
     }

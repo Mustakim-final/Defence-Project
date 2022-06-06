@@ -14,8 +14,20 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.example.finddoctor.Adapter.AdvertiseAdapter;
+import com.example.finddoctor.Model.Advertise;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.smarteist.autoimageslider.SliderView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,6 +42,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     final static String pres="pres";
 
     FirebaseAuth mAuth;
+
+    List<Advertise> advertiseList;
+    AdvertiseAdapter advertiseAdapter;
+    SliderView sliderView;
+
+    FirebaseStorage firebaseStorage;
+    DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         health=findViewById(R.id.helthCard_ID);
         emergencyCard=findViewById(R.id.emergency_doctorCard_ID);
         shopCard=findViewById(R.id.shopCard_ID);
+
 
         doctorCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +142,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        sliderView=findViewById(R.id.sliderView_ID);
+
+        advertiseList=new ArrayList<>();
+
+        firebaseStorage=FirebaseStorage.getInstance();
+        reference= FirebaseDatabase.getInstance().getReference("advertise");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                advertiseList.clear();
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    Advertise advertise=dataSnapshot.getValue(Advertise.class);
+                    advertiseList.add(advertise);
+                }
+
+                advertiseAdapter=new AdvertiseAdapter(MainActivity.this,advertiseList);
+                sliderView.setSliderAdapter(advertiseAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
     }
@@ -138,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (item.getItemId()==R.id.chat_ID){
             Intent intent=new Intent(MainActivity.this,StartActivity.class);
             startActivity(intent);
+
         }else if (item.getItemId()== R.id.signOut_ID){
             mAuth=FirebaseAuth.getInstance();
             mAuth.signOut();

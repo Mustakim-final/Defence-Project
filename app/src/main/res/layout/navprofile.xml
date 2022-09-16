@@ -3,13 +3,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#B67979"
-    android:layout_height="160dp">
+    android:layout_height="300dp">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher">
+        android:layout_width="match_parent"
+        android:src="@drawable/main_logu"
+        android:layout_height="200dp">
 
     </ImageView>
 
@@ -17,8 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textSize="15sp"
-        android:text="Find Doctor">
+        android:textColor="#851212"
+        android:textSize="18sp"
+        android:text="@string/app_name">
 
     </TextView>
 </LinearLayout>

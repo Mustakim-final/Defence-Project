@@ -14,7 +14,6 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/protin"
             android:id="@+id/imageView_ID"
             android:layout_weight="1">
 

@@ -5,92 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:layout_marginTop="100dp"
     tools:context=".SerilaIntroductionActivity">
 
-    <EditText
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameSerial_ID"
-        android:hint="Name...">
-
-    </EditText>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address: "
-        android:textStyle="bold"
-        android:textSize="20sp">
-
-    </TextView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="136dp">
-
-        <EditText
-            android:id="@+id/districtSerial_ID"
-            android:layout_width="205dp"
-            android:layout_height="wrap_content"
-            android:hint="District..."
-            android:padding="10dp">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/subdistrictSerial_ID"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/districtSerial_ID"
-            android:hint="Sub District..."
-            android:padding="10dp">
+            android:id="@+id/tool_bar_ID"
+            android:background="@color/purple_200">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:id="@+id/backBtn">
 
-        </EditText>
+            </ImageView>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/localSerial_ID"
-            android:layout_alignBottom="@+id/districtSerial_ID"
-            android:layout_marginBottom="-60dp"
-            android:hint="Local Address "
-            android:padding="10dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="64dp"
+                android:layout_height="50dp"
+                android:id="@+id/profileImage_ID">
 
-        </EditText>
+            </de.hdodenhof.circleimageview.CircleImageView>
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UserName"
+                android:layout_marginLeft="25dp"
+                android:id="@+id/profileName_ID">
 
-    <EditText
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/illnessSerial_ID"
-        android:hint="Description of illness...">
+        android:id="@+id/prescriptionRecycler_ID"
+        android:layout_height="match_parent">
 
-    </EditText>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:id="@+id/phoneSerial_ID"
-        android:hint="Phone Number..">
-
-    </EditText>
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="submit"
-        android:layout_marginTop="20dp"
-        android:id="@+id/submitSerial_ID">
-
-    </Button>
-
-
-
-
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>

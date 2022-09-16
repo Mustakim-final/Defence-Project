@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_margin="10dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/s_answerProfileImage_ID"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/ic_launcher">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/s_answerProfileName_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/s_answerProfileImage_ID"
+                android:text="Name">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/s_answerType_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s_answerProfileName_ID"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/s_answerProfileImage_ID"
+                android:text="type">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/s_answer_ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/s_answerProfileImage_ID"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="question">
+
+            </TextView>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

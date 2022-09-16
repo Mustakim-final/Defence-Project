@@ -22,7 +22,7 @@
             android:background="@color/purple_200">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="64dp"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="70dp"
                 android:id="@+id/profileImage_ID">
@@ -79,7 +79,6 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_purple"
                                 android:src="@drawable/doctor">
 
                             </ImageView>
@@ -122,7 +121,6 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_blue"
                                 android:src="@drawable/ic_baseline_article_24">
 
                             </ImageView>
@@ -164,7 +162,6 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_pink"
                                 android:src="@drawable/ic_baseline_assignment_24">
 
                             </ImageView>
@@ -218,8 +215,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_purple"
-                                android:src="@drawable/medicine">
+                                android:src="@drawable/pharmacy">
 
                             </ImageView>
 
@@ -234,7 +230,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="মেডিসিন"
+                                android:text="ফার্মেসী"
                                 android:textSize="15sp"
                                 android:textAppearance="?android:textAppearanceLarge">
 
@@ -260,9 +256,8 @@
 
                             <ImageView
                                 android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_blue"
-                                android:src="@drawable/ambulance">
+                                android:src="@drawable/ambulance"
+                                android:layout_height="50dp">
 
                             </ImageView>
 
@@ -384,8 +379,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/fast_kit"
-                                android:background="@drawable/circlebackground_purple">
+                                android:src="@drawable/fast_kit">
 
                             </ImageView>
 
@@ -427,8 +421,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/shop"
-                                android:background="@drawable/circlebackground_blue">
+                                android:src="@drawable/shop">
 
                             </ImageView>
 
@@ -467,8 +460,8 @@
                             android:orientation="vertical">
                             <ImageView
                                 android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:background="@drawable/circulebackground_green">
+                                android:layout_height="67dp"
+                                android:src="@drawable/question_ans">
 
                             </ImageView>
                             <View
@@ -482,7 +475,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="পরামর্শ"
+                                android:text="@string/question_for_doctor"
+                                android:textAlignment="center"
                                 android:textSize="15sp"
                                 android:textAppearance="?android:textAppearanceLarge">
 
@@ -520,7 +514,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/circlebackground_purple">
+                                android:src="@drawable/hospital">
 
                             </ImageView>
 
@@ -549,7 +543,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_margin="10dp"
-                        android:id="@+id/pharmacyCard_ID"
+                        android:id="@+id/diagnosticCard_ID"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground">
 
@@ -562,6 +556,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:src="@drawable/diagnostic"
                                 android:background="@drawable/circlebackground_blue">
 
                             </ImageView>
@@ -577,7 +572,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ফার্মেসী"
+                                android:text="ডায়াগনস্টিক"
                                 android:textSize="15sp"
                                 android:textAppearance="?android:textAppearanceLarge">
 
@@ -602,6 +597,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
+                                android:src="@drawable/ic_baseline_add_circle_24"
                                 android:background="@drawable/circulebackground_green">
 
                             </ImageView>

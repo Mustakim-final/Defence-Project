@@ -15,21 +15,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/tool_bar_ID"
             android:background="@color/purple_200">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="64dp"
-                android:layout_height="50dp"
-                android:id="@+id/profileImage_ID">
-
-            </de.hdodenhof.circleimageview.CircleImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="UserName"
-                android:layout_marginLeft="25dp"
-                android:id="@+id/profileName_ID">
-
-            </TextView>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -38,11 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/emergency_doctor_tabLayout_ID"
-        android:background="#726EE8"
-        app:tabSelectedTextColor="#DAB7B7"
-        app:tabTextColor="#fff">
+        android:background="#fff"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#C11111"
+        app:tabTextColor="#000">
 
     </com.google.android.material.tabs.TabLayout>
+
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
@@ -51,5 +38,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </androidx.viewpager.widget.ViewPager>
+
+
 
 </LinearLayout>

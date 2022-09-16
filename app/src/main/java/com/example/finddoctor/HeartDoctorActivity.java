@@ -2,17 +2,21 @@ package com.example.finddoctor;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.view.MenuItem;
 
+
+import com.example.finddoctor.Adapter.All_Doctor_Adapter.AllAdapter;
 import com.example.finddoctor.Adapter.DoctorAdapter;
+import com.example.finddoctor.Model.All_Doctor;
 import com.example.finddoctor.Model.Doctor;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,41 +29,54 @@ import java.util.List;
 public class HeartDoctorActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-
+    List<All_Doctor> all_doctorList;
+    AllAdapter allAdapter;
     DatabaseReference reference;
-    List<Doctor> doctorList;
-    DoctorAdapter doctorAdapter;
 
+    Intent intent;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heart_doctor);
-        recyclerView = findViewById(R.id.doctor_recycler_ID);
 
+        intent=getIntent();
+        String type=intent.getStringExtra("heart");
+
+        toolbar=findViewById(R.id.tool_bar_ID);
+        toolbar.setTitle(type);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        recyclerView=findViewById(R.id.heart_diseaseRecycler_ID);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        redInformation();
+        all_doctorList=new ArrayList<>();
+        redAllDoctor();
 
 
     }
 
-    private void redInformation() {
-        doctorList = new ArrayList<>();
-        reference=FirebaseDatabase.getInstance().getReference("Information");
+    private void redAllDoctor() {
+
+        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+
+        reference= FirebaseDatabase.getInstance().getReference("Doctor List");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                doctorList.clear();
+                all_doctorList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    Doctor doctor=dataSnapshot.getValue(Doctor.class);
-                    doctorList.add(doctor);
+                    All_Doctor all_doctor=dataSnapshot.getValue(All_Doctor.class);
+                    if (all_doctor.getType().equals("Heart disease")){
+                        all_doctorList.add(all_doctor);
+                    }
                 }
-
-                doctorAdapter=new DoctorAdapter(HeartDoctorActivity.this,doctorList);
-                recyclerView.setAdapter(doctorAdapter);
+                allAdapter=new AllAdapter(HeartDoctorActivity.this,all_doctorList);
+                recyclerView.setAdapter(allAdapter);
             }
 
             @Override
@@ -67,5 +84,20 @@ public class HeartDoctorActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_form_left,R.anim.slide_to_right);
     }
 }

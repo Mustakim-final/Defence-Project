@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:layout_height="wrap_content">
+
+
+
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:src="@drawable/ic_baseline_add_box_24"
+        android:id="@+id/addBtn">
+
+    </ImageView>
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:text="1300"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/itemPriceID"
+        android:textColor="#000"
+        android:textSize="18sp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        android:text="my item"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/itemTextID"
+        android:textColor="#000"
+        android:textSize="18sp">
+
+    </TextView>
+
+
+
+
+</LinearLayout>

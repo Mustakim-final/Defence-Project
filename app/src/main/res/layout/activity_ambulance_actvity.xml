@@ -7,19 +7,37 @@
     android:orientation="vertical"
     tools:context=".AmbulanceActvity">
 
-    <ImageView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:src="@drawable/ambulance_one">
-    </ImageView>
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tool_bar_ID"
+            android:background="@color/purple_200">
+        </androidx.appcompat.widget.Toolbar>
 
-    <TextView
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_margin="10dp"
+        android:elevation="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ambulance Number:017925562156"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold">
+        app:iconifiedByDefault="false"
+        app:queryHint="Search here...."
+        android:layout_height="wrap_content"/>
 
-    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ambulanceTitleRecycler">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 </LinearLayout>
+
+

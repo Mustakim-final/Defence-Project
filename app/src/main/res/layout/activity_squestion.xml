@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".S_QuestionActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tool_bar_ID"
+            android:background="@color/purple_200">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout_border"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="50dp">
+
+
+        <Spinner
+            android:id="@+id/questionTypeSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityPaneTitle="রোগীর টাইপ সিলেক্ট করুন"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp">
+
+        </Spinner>
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="8"
+        android:gravity="start"
+        android:hint="Enter your question"
+        android:layout_margin="5dp"
+        android:background="@drawable/layout_border"
+        android:id="@+id/questionEditText">
+
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/layout_border"
+        android:layout_marginTop="10dp"
+        android:id="@+id/questionImageLayout"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="7dp"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/imageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Select image">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/selectImage"
+            android:src="@drawable/ic_baseline_cloud_upload_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp">
+
+        </ImageView>
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:background="@drawable/btn_background"
+        android:layout_margin="50dp"
+        android:id="@+id/questionPostBtn">
+
+    </Button>
+
+
+</LinearLayout>

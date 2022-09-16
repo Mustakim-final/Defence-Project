@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:id="@+id/seba_text_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:id="@+id/seba_text1_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/seba_text2_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:id="@+id/seba_text3_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:id="@+id/seba_text4_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:id="@+id/seba_image5_ID"
+            android:layout_height="50dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/seba_text5_ID"
+            android:text="hello">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/dooted"
+        android:id="@+id/seba_view5_ID"
+        android:layout_height="2dp">
+
+    </View>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="@drawable/btn_background"
+        android:text="প্যাকেজ কিনুন"
+        android:id="@+id/seba_pakageBTn_ID">
+
+    </Button>
+
+
+
+</LinearLayout>

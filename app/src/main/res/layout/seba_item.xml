@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:id="@+id/health_linerlayout_ID"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/health_relativeLayout"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/health_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+
+            android:text="Title"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/health_prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:text="500">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/health_vat"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="50dp"
+            android:layout_below="@+id/health_prize"
+            android:layout_marginTop="2dp"
+            android:text="@string/vat">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/health_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_Title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Appointment"
+            android:textSize="15sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/health_validation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_appointment"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Validation"
+            android:textSize="15sp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

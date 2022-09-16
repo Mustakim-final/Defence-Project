@@ -1,7 +1,12 @@
 package com.example.finddoctor;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -9,7 +14,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
-import android.widget.SearchView;
+
+import com.example.finddoctor.Adapter.Ambulance.AmbulanceTitleAdapter;
+import com.example.finddoctor.Adapter.Hospital.HospitalTitleAdapter;
+import com.example.finddoctor.Adapter.Pharmacy.PharmacyAdapter;
+import com.example.finddoctor.Model.Hospital;
+import com.example.finddoctor.Model.Pharmacy;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,48 +32,100 @@ import java.util.List;
 
 public class Medichine extends AppCompatActivity {
 
-    private ExpandableListView expandableListView;
-
-    CustomAdapter customAdapter;
-    List<String> header_list;
-    HashMap<String,List<String>> child_list;
-
-    private int lastExpand=-1;
+    Toolbar toolbar;
+    SearchView search;
+    RecyclerView recyclerView;
+    PharmacyAdapter pharmacyAdapter;
+    List<Pharmacy> pharmacyList;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medichine);
-        prepareListData();
-        expandableListView=findViewById(R.id.expandable_ID);
-        customAdapter=new CustomAdapter(this,header_list,child_list);
-        expandableListView.setAdapter(customAdapter);
 
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+        toolbar=findViewById(R.id.tool_bar_ID);
+        toolbar.setTitle("ফার্মেসী");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        search = findViewById(R.id.search);
+        search.clearFocus();
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onGroupExpand(int groupPosition) {
-                if (lastExpand !=-1 && lastExpand !=groupPosition){
-                    expandableListView.collapseGroup(lastExpand);
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                searchv(s);
+                return true;
+            }
+        });
+
+        recyclerView=findViewById(R.id.pharmacyRecycler);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        pharmacyList=new ArrayList<>();
+
+        redData();
+
+    }
+
+
+    private void redData() {
+
+        reference= FirebaseDatabase.getInstance().getReference("pharmacy_info");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                pharmacyList.clear();
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    Pharmacy pharmacy=dataSnapshot.getValue(Pharmacy.class);
+                    pharmacyList.add(pharmacy);
                 }
-                lastExpand=groupPosition;
+
+                pharmacyAdapter=new PharmacyAdapter(Medichine.this,pharmacyList);
+                recyclerView.setAdapter(pharmacyAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
 
-
-    private void prepareListData() {
-        String[] headerString=getResources().getStringArray(R.array.header_string);
-        String[] childString=getResources().getStringArray(R.array.child_string);
-
-        header_list=new ArrayList<>();
-        child_list=new HashMap<>();
-
-        for (int i=0;i<headerString.length;i++){
-            header_list.add(headerString[i]);
-
-            List<String> child=new ArrayList<>();
-            child.add(childString[i]);
-
-            child_list.put(header_list.get(i),child);
+    private void searchv(String str) {
+        List<Pharmacy> pharmacyList1 = new ArrayList<>();
+        for (Pharmacy object : pharmacyList) {
+            if (object.getTitle().toLowerCase().contains(str.toLowerCase())) {
+                pharmacyList1.add(object);
+            }
         }
+        pharmacyAdapter=new PharmacyAdapter(Medichine.this,pharmacyList1);
+        recyclerView.setAdapter(pharmacyAdapter);
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_form_left,R.anim.slide_to_right);
+    }
+
+
 }

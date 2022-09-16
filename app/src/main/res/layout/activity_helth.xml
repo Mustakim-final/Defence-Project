@@ -7,13 +7,41 @@
     android:orientation="vertical"
     tools:context=".HelthActivity">
 
-    <ListView
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tool_bar_ID"
+            android:background="@color/purple_200">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/health_tabLayout_ID"
+        android:background="#726EE8"
+        app:tabSelectedTextColor="#DAB7B7"
+        app:tabTextColor="#fff">
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="2dp"
-        android:id="@+id/listView_ID"
-        android:listSelector="#52B3DF"
-        android:divider="#D11F1F">
-    </ListView>
+        android:id="@+id/health_viewPager_ID"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
 
 </LinearLayout>

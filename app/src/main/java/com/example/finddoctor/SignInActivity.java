@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,10 +24,8 @@ public class SignInActivity extends AppCompatActivity {
 
     private EditText gmailEditText,passwordEditText;
     private Button button;
+    private TextView goSinupText;
     private ProgressBar progressBar;
-    Intent intent;
-    int value,value1,value2;
-
     FirebaseAuth firebaseAuth;
     DatabaseReference reference;
     @Override
@@ -38,13 +37,15 @@ public class SignInActivity extends AppCompatActivity {
         passwordEditText=findViewById(R.id.signPassword_ID);
         button=findViewById(R.id.signSubmit_ID);
         progressBar=findViewById(R.id.signProgressbar_ID);
+        goSinupText=findViewById(R.id.goSignUP_ID);
 
-
-        intent=getIntent();
-        value=intent.getIntExtra(StartActivity.serial,0);
-        intent=getIntent();
-        value1=intent.getIntExtra(StartActivity.pres,0);
-
+        goSinupText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SignInActivity.this,RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -86,19 +87,11 @@ public class SignInActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()){
 
-                    if (value==1){
-                        Intent intent=new Intent(SignInActivity.this,Prescription.class);
-                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        Toast.makeText(SignInActivity.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
-                    }else if (value1==2){
-                        Intent intent=new Intent(SignInActivity.this,SerilaIntroductionActivity.class);
-                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        Toast.makeText(SignInActivity.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
-                    }
-
-
+                    Intent intent=new Intent(SignInActivity.this,MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    Toast.makeText(SignInActivity.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             }
         });

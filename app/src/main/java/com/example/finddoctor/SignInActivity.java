@@ -22,6 +22,17 @@ import com.google.firebase.database.DatabaseReference;
 
 public class SignInActivity extends AppCompatActivity {
 
+    @Override
+    protected void onStart() {
+        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser!=null){
+            Intent intent=new Intent(SignInActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        super.onStart();
+    }
+
     private EditText gmailEditText,passwordEditText;
     private Button button;
     private TextView goSinupText;

@@ -59,6 +59,7 @@
                 app:nbMaxTextLength="2">
 
             </com.nex3z.notificationbadge.NotificationBadge>
+
         </FrameLayout>
     </LinearLayout>
 

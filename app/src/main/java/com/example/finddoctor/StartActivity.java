@@ -42,10 +42,6 @@ public class StartActivity extends AppCompatActivity {
         button2=findViewById(R.id.signUpIn_ID);
 
 
-
-
-
-
     }
 
 

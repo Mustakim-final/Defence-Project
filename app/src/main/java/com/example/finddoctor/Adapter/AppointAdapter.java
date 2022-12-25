@@ -1,15 +1,18 @@
 package com.example.finddoctor.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.finddoctor.MessageWithDActivity;
 import com.example.finddoctor.Model.Appointment;
 import com.example.finddoctor.R;
 
@@ -52,15 +55,28 @@ public class AppointAdapter extends RecyclerView.Adapter<AppointAdapter.MyHolder
         return appointmentList.size();
     }
 
-    public class MyHolder extends RecyclerView.ViewHolder{
+    public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CircleImageView imageView;
         TextView nameText,dateText,meetText;
+        ImageView messageViewBtn;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.appointImage);
             nameText=itemView.findViewById(R.id.appointName);
             dateText=itemView.findViewById(R.id.appointDate);
             meetText=itemView.findViewById(R.id.appointMeetLink);
+            messageViewBtn=itemView.findViewById(R.id.messageBtn_ID);
+
+            messageViewBtn.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Appointment appointment=appointmentList.get(getAdapterPosition());
+            String doctorId=appointment.getD_id();
+            Intent intent=new Intent(context,MessageWithDActivity.class);
+            intent.putExtra("d_id",doctorId);
+            context.startActivity(intent);
         }
     }
 }

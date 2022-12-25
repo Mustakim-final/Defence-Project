@@ -103,8 +103,10 @@ public class Prescription extends AppCompatActivity {
                 appointmentList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Appointment appointment=dataSnapshot.getValue(Appointment.class);
+                    if (appointment.getId().equals(myId)){
+                        appointmentList.add(appointment);
+                    }
 
-                    appointmentList.add(appointment);
 
                 }
                 appointAdapter=new AppointAdapter(Prescription.this,appointmentList);

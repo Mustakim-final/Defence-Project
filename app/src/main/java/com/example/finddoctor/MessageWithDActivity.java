@@ -162,6 +162,7 @@ public class MessageWithDActivity extends AppCompatActivity {
 
         reference.child("Chats").push().setValue(hashMap);
 
+
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
@@ -219,6 +220,8 @@ public class MessageWithDActivity extends AppCompatActivity {
 
                     Data data=new Data(firebaseUser.getUid(),R.drawable.main_logu,username+":"+msg,"New Message",userID);
                     Notification notification=new Notification(username,msg,R.drawable.main_logu);
+
+
 
                     Sender sender=new Sender(token.getToken(),data,notification);
                     apiService.sendNotification(sender)

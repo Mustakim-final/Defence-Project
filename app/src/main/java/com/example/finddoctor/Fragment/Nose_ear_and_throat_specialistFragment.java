@@ -62,11 +62,11 @@ public class Nose_ear_and_throat_specialistFragment extends Fragment {
                 all_doctorList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     All_Doctor all_doctor=dataSnapshot.getValue(All_Doctor.class);
-                    if (all_doctor.getType().equals("Nose, ear and throat specialist")){
+                    if (all_doctor.getType().equals("Nose, ear and throat specialist")&& all_doctor.getStatus().equals("yes")){
                         all_doctorList.add(all_doctor);
                     }
                 }
-                all_doctor_adapter=new All_doctor_Adapter(getContext(),all_doctorList);
+                all_doctor_adapter=new All_doctor_Adapter(getContext(),all_doctorList,true);
                 recyclerView.setAdapter(all_doctor_adapter);
             }
 

@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -62,9 +63,12 @@ public class All_doctor_Fragment extends Fragment {
                 all_doctorList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     All_Doctor all_doctor=dataSnapshot.getValue(All_Doctor.class);
-                    all_doctorList.add(all_doctor);
+                    if (all_doctor.getStatus().equals("yes")){
+                        all_doctorList.add(all_doctor);
+                    }
+
                 }
-                all_doctor_adapter=new All_doctor_Adapter(getContext(),all_doctorList);
+                all_doctor_adapter=new All_doctor_Adapter(getContext(),all_doctorList,true);
                 recyclerView.setAdapter(all_doctor_adapter);
             }
 
@@ -75,4 +79,6 @@ public class All_doctor_Fragment extends Fragment {
         });
 
     }
+
+
 }

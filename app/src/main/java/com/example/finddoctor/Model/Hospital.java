@@ -1,5 +1,7 @@
 package com.example.finddoctor.Model;
 
+import java.util.Comparator;
+
 public class Hospital {
     private String id,title,address,phone,hospital,info,ambulance;
 
@@ -16,6 +18,12 @@ public class Hospital {
         this.ambulance=ambulance;
     }
 
+    public static Comparator<Hospital> AmbulanceTitleCamparator=new Comparator<Hospital>() {
+        @Override
+        public int compare(Hospital p1, Hospital p2) {
+            return p1.getTitle().compareTo(p2.getTitle());
+        }
+    };
 
     public String getId() {
         return id;

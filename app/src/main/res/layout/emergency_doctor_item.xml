@@ -78,6 +78,14 @@
 
                     </TextView>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="unactive"
+                        android:id="@+id/active_ID">
+
+                    </TextView>
+
                 </LinearLayout>
 
 

@@ -1,12 +1,12 @@
 package com.example.finddoctor.Model;
 
 public class All_Doctor {
-    String name,information,age,gender,phone,address,id,username,gmail,imageUrl,status,day,fees,type,myId;
+    String name,information,age,gender,phone,address,id,username,gmail,imageUrl,status,day,fees,type,myId,permit;
 
     public All_Doctor() {
     }
 
-    public All_Doctor(String name, String information, String age, String gender, String phone, String address, String id, String username, String gmail, String imageUrl, String status, String day, String fees, String type,String myId) {
+    public All_Doctor(String name, String information, String age, String gender, String phone, String address, String id, String username, String gmail, String imageUrl, String status, String day, String fees, String type,String myId,String permit) {
         this.name = name;
         this.information = information;
         this.age = age;
@@ -22,7 +22,9 @@ public class All_Doctor {
         this.fees = fees;
         this.type = type;
         this.myId=myId;
+        this.permit=permit;
     }
+
 
     public String getName() {
         return name;
@@ -142,5 +144,13 @@ public class All_Doctor {
 
     public void setMyId(String myId) {
         this.myId = myId;
+    }
+
+    public String getPermit() {
+        return permit;
+    }
+
+    public void setPermit(String permit) {
+        this.permit = permit;
     }
 }

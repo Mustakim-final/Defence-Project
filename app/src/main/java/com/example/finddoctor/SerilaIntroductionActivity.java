@@ -101,7 +101,10 @@ public class SerilaIntroductionActivity extends AppCompatActivity {
                     Emergency_prescription emergency_prescription=dataSnapshot.getValue(Emergency_prescription.class);
 
                     if (emergency_prescription.getUserId().equals(myId)){
-                        emergency_prescriptionList.add(emergency_prescription);
+                        if (emergency_prescription.getUserId().equals(myId)){
+                            emergency_prescriptionList.add(emergency_prescription);
+                        }
+
                     }
 
                 }

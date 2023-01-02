@@ -21,8 +21,13 @@ import com.example.finddoctor.Fragment.Heart_diseaseFragment;
 import com.example.finddoctor.Fragment.Nose_ear_and_throat_specialistFragment;
 import com.example.finddoctor.Fragment.PilesFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EmergencyDoctorActivity extends AppCompatActivity {
 
@@ -30,6 +35,8 @@ public class EmergencyDoctorActivity extends AppCompatActivity {
     ViewPager viewPager;
 
     Toolbar toolbar;
+    FirebaseUser firebaseUser;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +46,9 @@ public class EmergencyDoctorActivity extends AppCompatActivity {
         toolbar.setTitle("জরুরী ডাক্তার");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mAuth=FirebaseAuth.getInstance();
+        firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
 
         tabLayout=findViewById(R.id.emergency_doctor_tabLayout_ID);
         viewPager=findViewById(R.id.emergency_doctor_viewPager_ID);
@@ -109,4 +119,6 @@ public class EmergencyDoctorActivity extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_form_left,R.anim.slide_to_right);
     }
+
+
 }

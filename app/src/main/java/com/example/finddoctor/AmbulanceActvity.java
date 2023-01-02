@@ -1,5 +1,7 @@
 package com.example.finddoctor;
 
+import static com.example.finddoctor.Model.Hospital.AmbulanceTitleCamparator;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -8,7 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.finddoctor.Adapter.Ambulance.AmbulanceTitleAdapter;
 import com.example.finddoctor.Adapter.Hospital.HospitalTitleAdapter;
@@ -20,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class AmbulanceActvity extends AppCompatActivity {
@@ -29,6 +37,7 @@ public class AmbulanceActvity extends AppCompatActivity {
     AmbulanceTitleAdapter ambulanceTitleAdapter;
     List<Hospital> hospitalList;
     DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +47,8 @@ public class AmbulanceActvity extends AppCompatActivity {
         toolbar.setTitle("অ্যাম্বুলেন্স");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         search = findViewById(R.id.search);
         search.clearFocus();
@@ -106,11 +117,21 @@ public class AmbulanceActvity extends AppCompatActivity {
         recyclerView.setAdapter(ambulanceTitleAdapter);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.lettershort,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==android.R.id.home){
             this.finish();
+        }else if (item.getItemId()==R.id.latterShort_ID){
+            Collections.sort(hospitalList,AmbulanceTitleCamparator);
+            ambulanceTitleAdapter.notifyDataSetChanged();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -3,15 +3,21 @@ package com.example.finddoctor.Shop;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.finddoctor.Adapter.Diagnostic.DIaCartAdapter;
 import com.example.finddoctor.EventBus.MyUpdateCartEvent;
@@ -28,11 +34,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalPayment;
+import com.paypal.android.sdk.payments.PayPalService;
+import com.paypal.android.sdk.payments.PaymentActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +54,13 @@ public class DiaInvoiceActivity extends AppCompatActivity implements IDiaInvoice
     IDiaInvoiceListener iDiaInvoiceListener;
     Toolbar toolbar;
     DatabaseReference reference;
+
+    Button paymentBtn;
+    public static final String clientId="ATwkFrgxEu_gif8XFVxeMIo82bmmSSmp0St0Li5rHmZmaX7KOdWr4lGU8BcXdFhfGtEdlHS3gChZdpI0";
+    public static final int PAYPAL_REQUEST_CODE=123;
+
+    public static PayPalConfiguration configuration=new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+            .clientId(clientId);
 
     @Override
     protected void onStart() {
@@ -79,6 +97,7 @@ public class DiaInvoiceActivity extends AppCompatActivity implements IDiaInvoice
         textName=findViewById(R.id.invoiceCartName);
         textTotal=findViewById(R.id.totalCost);
         totalGrand=findViewById(R.id.grandTotal);
+        paymentBtn=findViewById(R.id.gen_formBtn);
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         String myID=firebaseUser.getUid();
 
@@ -96,10 +115,20 @@ public class DiaInvoiceActivity extends AppCompatActivity implements IDiaInvoice
             }
         });
 
+        paymentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String amount=totalGrand.getText().toString();
+                getPayment(amount);
+            }
+        });
+
 
         init1();
         LoadDiaCartFormFirebase();
     }
+
+
 
     private void LoadDiaCartFormFirebase() {
         FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
@@ -156,6 +185,31 @@ public class DiaInvoiceActivity extends AppCompatActivity implements IDiaInvoice
     @Override
     public void onCartLoadFailed(String message) {
 
+    }
+
+    private void getPayment(String amount) {
+        PayPalPayment payment=new PayPalPayment(new BigDecimal(String.valueOf(amount)),"USD","Learn",PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent=new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,configuration);
+
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment);
+        startActivityForResult(intent,PAYPAL_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==PAYPAL_REQUEST_CODE){
+            PayPalConfiguration config=data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+
+            if (config!=null){
+                String paymentDetails=config.toString();
+                Toast.makeText(this, ""+paymentDetails, Toast.LENGTH_SHORT).show();
+            }
+        }else if (requestCode== Activity.RESULT_CANCELED){
+            Toast.makeText(this, "Something wrong", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

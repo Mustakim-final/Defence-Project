@@ -261,14 +261,13 @@
 
 
     <Button
+        android:id="@+id/gen_formBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_confirm"
         android:layout_margin="50dp"
-        android:id="@+id/gen_formBtn">
+        android:text="@string/btn_confirm">
 
     </Button>
-
 
 
 </LinearLayout>

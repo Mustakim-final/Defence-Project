@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class General_Apply_FormActivity extends AppCompatActivity {
     Toolbar toolbar;
-    Button submitBtn;
+    Button submitBtn,paymentBtn;
     Intent intent;
     TextView chamberText,patientText,feeText,totalCostText,grandTotalText;
     String date,time,fee,name,chamber,type,d_id,problem;
@@ -62,6 +62,7 @@ public class General_Apply_FormActivity extends AppCompatActivity {
         totalCostText.setText(String.valueOf(fee));
         grandTotalText=findViewById(R.id.grandTotal);
         grandTotalText.setText(String.valueOf(fee));
+
         FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
         String myID=firebaseUser.getUid();
         DatabaseReference reference1=FirebaseDatabase.getInstance().getReference("Users").child(myID);

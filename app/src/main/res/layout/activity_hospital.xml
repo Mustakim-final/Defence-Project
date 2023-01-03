@@ -19,6 +19,15 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_margin="10dp"
+        android:elevation="40dp"
+        android:layout_width="match_parent"
+        app:iconifiedByDefault="false"
+        app:queryHint="Search here...."
+        android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

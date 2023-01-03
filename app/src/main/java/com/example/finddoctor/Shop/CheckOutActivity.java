@@ -1,9 +1,11 @@
 package com.example.finddoctor.Shop;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.finddoctor.Model.Users;
 import com.example.finddoctor.R;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +26,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalPayment;
+import com.paypal.android.sdk.payments.PayPalService;
+import com.paypal.android.sdk.payments.PaymentActivity;
+
+import java.math.BigDecimal;
 
 public class CheckOutActivity extends AppCompatActivity {
     Intent intent;
@@ -38,6 +47,12 @@ public class CheckOutActivity extends AppCompatActivity {
     String myId;
 
     Toolbar toolbar;
+    ExtendedFloatingActionButton fl;
+    public static final String clientId="ATwkFrgxEu_gif8XFVxeMIo82bmmSSmp0St0Li5rHmZmaX7KOdWr4lGU8BcXdFhfGtEdlHS3gChZdpI0";
+    public static final int PAYPAL_REQUEST_CODE=123;
+
+    public static PayPalConfiguration configuration=new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+            .clientId(clientId);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +71,9 @@ public class CheckOutActivity extends AppCompatActivity {
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         myId=firebaseUser.getUid();
 
+        fl=findViewById(R.id.makePayment);
+
+
         nameText=findViewById(R.id.checkOutName);
         phoneEdit=findViewById(R.id.checkOutPhone);
         addressEdit=findViewById(R.id.checkOutAddress);
@@ -70,6 +88,14 @@ public class CheckOutActivity extends AppCompatActivity {
         subTotalText.setText(total);
         chargeText=findViewById(R.id.checkOutDeliveryCharge);
         totalText=findViewById(R.id.checkOutTotal);
+
+        fl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String amount=totalText.getText().toString();
+                getPayment(amount);
+            }
+        });
 
         reference= FirebaseDatabase.getInstance().getReference("Users").child(myId);
         reference.addValueEventListener(new ValueEventListener() {
@@ -120,6 +146,31 @@ public class CheckOutActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void getPayment(String amount) {
+        PayPalPayment payment=new PayPalPayment(new BigDecimal(String.valueOf(amount)),"USD","Learn",PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent=new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,configuration);
+
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment);
+        startActivityForResult(intent,PAYPAL_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==PAYPAL_REQUEST_CODE){
+            PayPalConfiguration config=data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+
+            if (config!=null){
+                String paymentDetails=config.toString();
+                Toast.makeText(this, ""+paymentDetails, Toast.LENGTH_SHORT).show();
+            }
+        }else if (requestCode== Activity.RESULT_CANCELED){
+            Toast.makeText(this, "Something wrong", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

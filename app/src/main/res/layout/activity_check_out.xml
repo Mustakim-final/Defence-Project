@@ -409,6 +409,7 @@
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:text="make payment"
+        android:id="@+id/makePayment"
         android:textAlignment="center"
         android:layout_height="wrap_content">
 

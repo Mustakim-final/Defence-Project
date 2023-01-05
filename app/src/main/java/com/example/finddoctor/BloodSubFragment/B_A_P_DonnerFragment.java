@@ -120,6 +120,8 @@ public class B_A_P_DonnerFragment extends Fragment {
                     if (users.getBlood().equals("A+")){
                         usersList.add(users);
                     }
+
+
                 }
 
                 donnerAdapter=new DonnerAdapter(getContext(),usersList);

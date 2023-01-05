@@ -34,47 +34,7 @@
             android:clipToPadding="false"
             android:layout_weight="1">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:id="@+id/bloodBankCard_ID"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/blood_bank"
-                        >
-
-                    </ImageView>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp">
-
-                    </View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ব্লাড ব্যাংক"
-                        android:textSize="15sp"
-                        android:textAppearance="?android:textAppearanceLarge">
-
-                    </TextView>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -132,7 +92,9 @@
                     android:orientation="vertical">
                     <ImageView
                         android:layout_width="50dp"
-                        android:layout_height="50dp">
+                        android:layout_height="50dp"
+                        android:src="@drawable/main_logu"
+                        >
 
                     </ImageView>
                     <View

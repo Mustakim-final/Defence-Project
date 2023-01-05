@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.finddoctor.Adapter.All_Doctor_Adapter.Em_DoctorAdapter;
@@ -104,6 +105,7 @@ public class Prescription extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Appointment appointment=dataSnapshot.getValue(Appointment.class);
                     if (appointment.getId().equals(myId)){
+                        appointment.setKey(dataSnapshot.getKey());
                         appointmentList.add(appointment);
                     }
 
@@ -111,6 +113,15 @@ public class Prescription extends AppCompatActivity {
                 }
                 appointAdapter=new AppointAdapter(Prescription.this,appointmentList);
                 recyclerView.setAdapter(appointAdapter);
+
+                appointAdapter.setOnClickListener(new AppointAdapter.onCLickListener() {
+                    @Override
+                    public void delete(int position) {
+                        Appointment selected=appointmentList.get(position);
+                        reference.child(selected.getKey()).removeValue();
+
+                    }
+                });
             }
 
             @Override

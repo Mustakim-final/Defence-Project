@@ -69,6 +69,7 @@ public class B_DonerFragment extends Fragment {
                             String blood=users.getBlood();
                             String id=users.getId();
 
+
                             DatabaseReference reference1=FirebaseDatabase.getInstance().getReference();
                             HashMap<String,Object> hashMap=new HashMap<>();
                             hashMap.put("username",name);

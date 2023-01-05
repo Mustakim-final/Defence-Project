@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
-                android:text="FInd Doctor">
+                android:text="Dr.OnCall">
 
             </TextView>
 

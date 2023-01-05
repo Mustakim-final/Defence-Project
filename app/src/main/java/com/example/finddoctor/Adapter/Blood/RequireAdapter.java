@@ -40,8 +40,8 @@ public class RequireAdapter extends RecyclerView.Adapter<RequireAdapter.MyHolder
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         Require require=requireList.get(position);
 
-        if (require.getImageUrl().equals("")){
-            holder.imageView.setImageResource(R.drawable.ic_baseline_perm_identity_24);
+        if (require.getImageUrl().equals("imageUrl")){
+            holder.imageView.setImageResource(R.drawable.main_logu);
         }else {
             Glide.with(context).load(require.getImageUrl()).into(holder.imageView);
         }

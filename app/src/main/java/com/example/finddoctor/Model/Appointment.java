@@ -1,7 +1,7 @@
 package com.example.finddoctor.Model;
 
 public class Appointment {
-    private String imageUrl,name,meet,date,d_id,id;
+    private String imageUrl,name,meet,date,d_id,id,key;
 
     public Appointment() {
     }
@@ -13,6 +13,14 @@ public class Appointment {
         this.date = date;
         this.id=id;
         this.d_id=d_id;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getImageUrl() {

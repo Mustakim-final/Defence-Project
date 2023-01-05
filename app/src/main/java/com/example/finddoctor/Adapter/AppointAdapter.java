@@ -2,7 +2,10 @@ package com.example.finddoctor.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -23,7 +26,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AppointAdapter extends RecyclerView.Adapter<AppointAdapter.MyHolder>{
     Context context;
     List<Appointment> appointmentList;
-
+    private onCLickListener listener;
     public AppointAdapter(Context context, List<Appointment> appointmentList) {
         this.context = context;
         this.appointmentList = appointmentList;
@@ -55,7 +58,7 @@ public class AppointAdapter extends RecyclerView.Adapter<AppointAdapter.MyHolder
         return appointmentList.size();
     }
 
-    public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
         CircleImageView imageView;
         TextView nameText,dateText,meetText;
         ImageView messageViewBtn;
@@ -68,6 +71,8 @@ public class AppointAdapter extends RecyclerView.Adapter<AppointAdapter.MyHolder
             messageViewBtn=itemView.findViewById(R.id.messageBtn_ID);
 
             messageViewBtn.setOnClickListener(this);
+
+            itemView.setOnCreateContextMenuListener(this);
         }
 
         @Override
@@ -78,5 +83,36 @@ public class AppointAdapter extends RecyclerView.Adapter<AppointAdapter.MyHolder
             intent.putExtra("d_id",doctorId);
             context.startActivity(intent);
         }
+
+        @Override
+        public boolean onMenuItemClick(@NonNull MenuItem item) {
+            if (listener!=null){
+                int position=getAdapterPosition();
+                if (position!=RecyclerView.NO_POSITION){
+                    switch (item.getItemId()){
+                        case 1:
+                            listener.delete(position);
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+            menu.setHeaderTitle("Options");
+            MenuItem delete=menu.add(Menu.NONE,1,1,"delete");
+            delete.setOnMenuItemClickListener(this);
+
+        }
+    }
+
+    public interface onCLickListener{
+        void delete(int position);
+    }
+
+    public void setOnClickListener(onCLickListener listener){
+        this.listener=listener;
     }
 }

@@ -25,17 +25,10 @@ public class ExtraMainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        bloodBankCard=findViewById(R.id.bloodBankCard_ID);
+
         blogCard=findViewById(R.id.blogCard);
 
-        bloodBankCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(ExtraMainActivity.this,BloodActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_form_right,R.anim.slide_to_left);
-            }
-        });
+
 
         blogCard.setOnClickListener(new View.OnClickListener() {
             @Override

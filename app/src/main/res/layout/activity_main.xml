@@ -298,7 +298,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:background="@drawable/circulebackground_green"
-                                android:src="@drawable/helth">
+                                android:src="@drawable/blood_bank">
 
                             </ImageView>
                             <View
@@ -312,7 +312,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="হেলথ"
+                                android:text="ব্লাড ব্যাংক"
                                 android:textSize="15sp"
                                 android:textAppearance="?android:textAppearanceLarge">
 

@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,HelthActivity.class);
+                Intent intent=new Intent(MainActivity.this,BloodActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_form_right,R.anim.slide_to_left);
             }

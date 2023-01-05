@@ -38,7 +38,7 @@ public class DonnerAdapter extends RecyclerView.Adapter<DonnerAdapter.MyHolder>{
         Users users=usersList.get(position);
 
         if (users.getImageUrl().equals("imageUrl")){
-            holder.imageView.setImageResource(R.mipmap.ic_launcher);
+            holder.imageView.setImageResource(R.drawable.main_logu);
         }else {
             Glide.with(context).load(users.getImageUrl()).into(holder.imageView);
         }

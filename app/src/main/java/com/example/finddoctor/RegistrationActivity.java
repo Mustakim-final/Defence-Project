@@ -99,6 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     HashMap<String,Object> hashMap=new HashMap<>();
                     hashMap.put("username",username);
                     hashMap.put("gmail",gmail);
+                    hashMap.put("blood","blood");
                     hashMap.put("id",userID);
                     hashMap.put("imageUrl","imageUrl");
 

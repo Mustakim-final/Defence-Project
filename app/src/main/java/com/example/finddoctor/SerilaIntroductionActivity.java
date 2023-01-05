@@ -102,6 +102,7 @@ public class SerilaIntroductionActivity extends AppCompatActivity {
 
                     if (emergency_prescription.getUserId().equals(myId)){
                         if (emergency_prescription.getUserId().equals(myId)){
+                            emergency_prescription.setKey(dataSnapshot.getKey());
                             emergency_prescriptionList.add(emergency_prescription);
                         }
 
@@ -110,6 +111,14 @@ public class SerilaIntroductionActivity extends AppCompatActivity {
                 }
                 em_doctorAdapter=new Em_DoctorAdapter(SerilaIntroductionActivity.this,emergency_prescriptionList);
                 recyclerView.setAdapter(em_doctorAdapter);
+
+                em_doctorAdapter.setOnClickListener(new Em_DoctorAdapter.onCLickListener() {
+                    @Override
+                    public void delete(int position) {
+                        Emergency_prescription selected=emergency_prescriptionList.get(position);
+                        reference.child(selected.getKey()).removeValue();
+                    }
+                });
             }
 
             @Override

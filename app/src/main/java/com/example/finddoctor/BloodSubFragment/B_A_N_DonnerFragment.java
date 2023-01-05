@@ -70,7 +70,7 @@ public class B_A_N_DonnerFragment extends Fragment {
                             String id=users.getId();
 
 
-                            if (blood.equals("A-")){
+                           if(blood.equals("A-")){
                                 DatabaseReference reference1=FirebaseDatabase.getInstance().getReference();
                                 HashMap<String,Object> hashMap=new HashMap<>();
                                 hashMap.put("username",name);
@@ -78,6 +78,7 @@ public class B_A_N_DonnerFragment extends Fragment {
                                 hashMap.put("blood",blood);
                                 hashMap.put("id",id);
                                 reference1.child("B_Donner").push().setValue(hashMap);
+
                             }else {
                                 Toast.makeText(getContext(),"আপনার রক্তের গ্রুপ A- নয়",Toast.LENGTH_SHORT).show();
                             }
@@ -121,6 +122,7 @@ public class B_A_N_DonnerFragment extends Fragment {
                     if (users.getBlood().equals("A-")){
                         usersList.add(users);
                     }
+
                 }
 
                 donnerAdapter=new DonnerAdapter(getContext(),usersList);

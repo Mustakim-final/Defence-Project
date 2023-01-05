@@ -1,7 +1,7 @@
 package com.example.finddoctor.Model;
 
 public class Emergency_prescription {
-    private String imageUrl,prescription,name,information,day,meet,myId,userId,img_pres,key;
+    private String imageUrl,prescription,name,information,day,meet,myId,userId,img_pres,key,date;
 
     public Emergency_prescription() {
     }
@@ -16,6 +16,14 @@ public class Emergency_prescription {
         this.myId = myId;
         this.userId = userId;
         this.img_pres=img_pres;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getKey() {

@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#fff"
     android:layout_height="wrap_content">
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:id="@+id/em_prescription_ID"
-        android:text="Hello"
-        android:textSize="18sp">
-
-    </TextView>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textIsSelectable="true"
-        android:id="@+id/em_meetLink_ID"
-        android:text="Hello"
-        android:textSize="18sp">
+        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textIsSelectable="true"
+                android:id="@+id/em_prescription_ID"
+                android:text="Hello"
+                android:textSize="18sp">
 
-    </TextView>
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textIsSelectable="true"
+                android:id="@+id/em_meetLink_ID"
+                android:text="Hello"
+                android:textSize="18sp">
 
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="date"
+                android:textIsSelectable="true"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:id="@+id/date_and_time">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_perm_identity_24"
-        android:id="@+id/em_prescriptionImage_ID">
+            </TextView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_perm_identity_24"
+                android:id="@+id/em_prescriptionImage_ID">
 
-    </ImageView>
+            </ImageView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </LinearLayout>

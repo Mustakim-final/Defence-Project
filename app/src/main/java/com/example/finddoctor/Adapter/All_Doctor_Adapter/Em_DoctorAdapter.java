@@ -55,7 +55,9 @@ public class Em_DoctorAdapter extends RecyclerView.Adapter<Em_DoctorAdapter.MyHo
         holder.nameText.setText(emergency_prescription.getName());
         holder.informationText.setText(emergency_prescription.getInformation());
         holder.dayText.setText(emergency_prescription.getDay());
+        holder.dateText.setText(emergency_prescription.getDate());
 
+        holder.statusText.setVisibility(View.GONE);
         holder.feesText.setVisibility(View.GONE);
         holder.requestBtnText.setVisibility(View.GONE);
     }
@@ -68,7 +70,7 @@ public class Em_DoctorAdapter extends RecyclerView.Adapter<Em_DoctorAdapter.MyHo
     public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
 
         CircleImageView circleImageView;
-        TextView nameText,informationText,dayText,feesText,requestBtnText;
+        TextView nameText,informationText,dayText,feesText,requestBtnText,dateText,statusText;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +81,8 @@ public class Em_DoctorAdapter extends RecyclerView.Adapter<Em_DoctorAdapter.MyHo
             dayText=itemView.findViewById(R.id.em_doctor_day_ID);
             feesText=itemView.findViewById(R.id.em_doctorFees);
             requestBtnText=itemView.findViewById(R.id.em_doctorRequestBtn_ID);
+            dateText=itemView.findViewById(R.id.date_and_time);
+            statusText=itemView.findViewById(R.id.active_ID);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

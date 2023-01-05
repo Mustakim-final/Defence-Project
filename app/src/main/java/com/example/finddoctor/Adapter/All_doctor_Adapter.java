@@ -51,6 +51,7 @@ public class All_doctor_Adapter extends RecyclerView.Adapter<All_doctor_Adapter.
         holder.dayText.setText("Available: "+all_doctor.getDay());
 
         holder.feesText.setText("ফি "+all_doctor.getFees());
+        holder.dateText.setVisibility(View.GONE);
 
 
         if (all_doctor.getImageUrl().equals("imageUrl")){
@@ -80,7 +81,7 @@ public class All_doctor_Adapter extends RecyclerView.Adapter<All_doctor_Adapter.
 
     public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CircleImageView circleImageView;
-        TextView nameText,informationText,dayText,feesText,requestBtnText,statusText;
+        TextView nameText,informationText,dayText,feesText,requestBtnText,statusText,dateText;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             circleImageView=itemView.findViewById(R.id.em_doctorImage_ID);
@@ -90,6 +91,7 @@ public class All_doctor_Adapter extends RecyclerView.Adapter<All_doctor_Adapter.
             feesText=itemView.findViewById(R.id.em_doctorFees);
             requestBtnText=itemView.findViewById(R.id.em_doctorRequestBtn_ID);
             statusText=itemView.findViewById(R.id.active_ID);
+            dateText=itemView.findViewById(R.id.date_and_time);
 
             itemView.setOnClickListener(this);
 

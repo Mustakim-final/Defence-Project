@@ -37,7 +37,9 @@ public class Em_PresAdapter extends RecyclerView.Adapter<Em_PresAdapter.MyHolder
         Emergency_prescription emergency_prescription=emergency_prescriptionList.get(position);
         holder.prescriptionText.setText(emergency_prescription.getPrescription());
         holder.meetText.setText(emergency_prescription.getMeet());
+        holder.dateText.setText(emergency_prescription.getDate());
         Glide.with(context).load(emergency_prescription.getImg_pres()).into(holder.imageViewPrecription);
+
     }
 
     @Override
@@ -47,13 +49,14 @@ public class Em_PresAdapter extends RecyclerView.Adapter<Em_PresAdapter.MyHolder
 
     public class MyHolder extends RecyclerView.ViewHolder{
         ImageView imageViewPrecription;
-        TextView prescriptionText,meetText;
+        TextView prescriptionText,meetText,dateText;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
 
             prescriptionText=itemView.findViewById(R.id.em_prescription_ID);
             meetText=itemView.findViewById(R.id.em_meetLink_ID);
             imageViewPrecription=itemView.findViewById(R.id.em_prescriptionImage_ID);
+            dateText=itemView.findViewById(R.id.date_and_time);
         }
     }
 }
